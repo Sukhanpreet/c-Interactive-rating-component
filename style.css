@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0%;
+    padding: 0%;
+    font-family: 'Overpass', sans-serif;
+    font-size: 15px;
+}
+
+:root {
+    --orange: hsl(25, 97%, 53%);
+    --white: hsl(0, 0%, 100%);
+    --light-grey: hsl(217, 12%, 63%);
+    --medium-grey: hsl(216, 12%, 54%);
+    --dark-blue: hsl(213, 19%, 18%);
+    --very-dark-blue: hsl(216, 12%, 8%);
+    --fadeed: hsla(217, 12%, 63%, 0.199);
+    --margin: 1.5rem;
+    --transition: all 300ms;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--very-dark-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card,
+.thanks-card {
+    width: max(320px, 25vw);
+    background-color: var(--dark-blue);
+    color: var(--white);
+    padding: 2rem;
+    border-radius: 20px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 1.5rem;
+}
+
+.thanks-card {
+    text-align: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.star-svg {
+    width: 0;
+    height: 0;
+    padding: 1.5rem;
+    background-color: var(--fadeed);
+    border-radius: 50%;
+    position: relative;
+}
+
+#star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#thanks-img {
+    width: 10rem;
+}
+
+.heading {
+    font-size: 2rem;
+}
+
+.text {
+    color: var(--light-grey);
+    line-height: 1.6;
+}
+
+.buttons-div {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    gap: 1rem;
+}
+
+.rate {
+    background-color: var(--fadeed);
+    color: var(--light-grey);
+    width: 2.5rem;
+    aspect-ratio: 1;
+    border: none;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.rate:hover {
+    background-color: var(--medium-grey);
+    color: var(--white);
+}
+
+.rate:focus {
+    background-color: var(--orange);
+    color: var(--white);
+}
+
+button[type='submit'] {
+    width: 100%;
+    background-color: var(--orange);
+    color: var(--white);
+    padding: 1rem;
+    border: none;
+    border-radius: 2rem;
+    transition: var(--transition)
+}
+
+button[type='submit']:hover,
+button[type='submit']:active {
+    background-color: var(--white);
+    color: var(--orange);
+}
+
+button[type='submit']:active {
+    transform: scale(1.05);
+}
+
+.rate-display {
+    padding: 0.3rem 1rem;
+    line-height: 1.5rem;
+    border-radius: 5rem;
+    background-color: var(--fadeed);
+    color: var(--orange);
+}
+
+@media (min-width:900px) {
+    .buttons-div button {
+        width: 3.5rem;
+    }
+}
